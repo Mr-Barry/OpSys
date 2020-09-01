@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+//  Implementation have addition functions addFirst, addLast for user,
+//checkValid, createNode for inner use. Also it uses 2 structs for list itself and list_node inside.
+
 struct List {
 	struct list_node *first;
 	struct list_node *last;
@@ -69,7 +72,7 @@ void insert_node(List * list, int prevIndex, int value) {
     Node * temp, *nextNode, *newNode;
     if (checkValid(list, prevIndex) == 0) return;
     else {
-		if 		 (prevIndex == 0) 			  addFirst(list, value);
+		if (prevIndex == 0) addFirst(list, value);
 		else if (prevIndex == list -> size) addLast (list, value);
 		else {
 			temp = list -> first;
@@ -80,10 +83,14 @@ void insert_node(List * list, int prevIndex, int value) {
 			}
 			nextNode = temp -> next;
 			newNode = createNode(value);
-			temp -> next = newNode;
+			//printf("B ");
+			(temp -> next) = newNode; //drop
+			//printf("C ");
 			newNode -> next = nextNode;
+			//printf("D ");
 		}
 		list -> size = list -> size + 1;
+		//printf("E ");
     }
 }
 
@@ -100,7 +107,7 @@ void delete_node(List * list, int index) { //delete a node
             while ((tmpNode -> next != NULL) & (i < index - 1)) {
                 i++;
                 tmpNode = tmpNode -> next;
-            }								
+            }
             tmpNode -> next = tmpNode -> next -> next;
         }
     }
@@ -108,16 +115,16 @@ void delete_node(List * list, int index) { //delete a node
 }
 
 int main() {
-    
     List * list = (List*) malloc(sizeof(List));
     addFirst(list, 5);
     addFirst(list, 3);
     addLast(list, 20);
     addLast(list, 721);
     print_list(list);
-    
+
     insert_node (list, 2, 9);
     insert_node (list, 4, 500);
     print_list(list);
     return 0;
+
 }
