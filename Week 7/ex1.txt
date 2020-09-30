@@ -1,0 +1,2 @@
+   text    data     bss     dec     hex filename
+   1018     816       8    1842     732 main
