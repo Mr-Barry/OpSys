@@ -1,0 +1,8 @@
+
+1) To increase ratio of hitting, we have to to reference pages in the reversed order, than they were referenced before. 
+For example:
+  1 2 3 4 4 3 2 1 with frame = 3 will experience only 5 misses
+
+
+2) At this time sequence 1 2 3 4 1 2 3 4 with frame = 3 will lead to 8 misses (0 hits). 
+So, the worst idea is to put references in the same order.
