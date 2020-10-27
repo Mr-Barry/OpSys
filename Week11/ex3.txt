@@ -1,0 +1,3 @@
+In the first program we have 2 "Hello" as an output, in the 2nd just one Hello.
+
+It is happening because /n clearing the buffer, and when in 1st program Hello was in buffer, in 2nd there was no Hello in buffer
