@@ -1,0 +1,22 @@
+O_SYNC disabled:
+
+DBUF_SIZE=500   : 0.020s
+DBUF_SIZE=1000  : 0.012s
+DBUF_SIZE=5000  : 0.009s
+DBUF_SIZE=10000 : 0.007s
+DBUF_SIZE=20000 : 0.006s
+DBUF_SIZE=30000 : 0.006s
+DBUF_SIZE=40000 : 0.005s
+
+
+O_SYNC enabled:
+
+DBUF_SIZE=500   : 16.337s
+DBUF_SIZE=1000  :  8.169s
+DBUF_SIZE=5000  :  1.674s
+DBUF_SIZE=10000 :  0.911s
+DBUF_SIZE=20000 :  0.468s
+DBUF_SIZE=30000 :  0.336s
+DBUF_SIZE=40000 :  0.280s
+
+O_SYNC greatly slows the perfomance due to waiting for the transfer in order to execute next one
