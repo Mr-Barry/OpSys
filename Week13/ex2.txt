@@ -1,0 +1,13 @@
+Avoid deadlocks through recovery is the easiest way to avoid deadlocks. Howewer, it is might be slower. There is 3 types of recovery
+
+- Rollback: process that holds the resource backing up to the point in time when it haven't claimed resource.
+It is slow, but efficient method.
+- Preemption: is you can take a resource from its current owner and transfer it to another process, this method could be used.
+Howewer, it is usually very difficult method due to the difficulty of determining from which process we can take the resource.
+- Killing processes: the easiest way to break the deadlock. But, the process losing eerything it just did, so that causes time losses.
+
+Prevention:
+Almost impossible, but (in theory) efficient method. Requires many info about processes and their requests before execution. 
+
+Avoidance:
+Almost impossible, since it requires many information about processes.
